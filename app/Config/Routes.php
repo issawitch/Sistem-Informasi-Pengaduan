@@ -40,21 +40,41 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/login', 'Home::login');
 $routes->get('/register', 'Home::register');
+$routes->get('/resetPassword', 'Home::resetPassword');
 $routes->get('/dashboard', 'Home::dashboard');
+$routes->get('/profil', 'Home::profil');
+$routes->get('/info', 'Home::info');
+$routes->get('news/detail/(:num)', 'News::detail/$1');
+
+
 
 
 //ROUTES USER
 
 $routes->get('/form_aduan', 'Home::form_aduan', ['filter' => 'role:user']);
 $routes->get('/histori', 'Pengaduan::show');
-$routes->get('/profil', 'Home::profil');
-$routes->get('/deteksi', 'Home::deteksi', ['filter' => 'role:user']);
+// $routes->get('/deteksi', 'Home::deteksi', ['filter' => 'role:user']);
 $routes->get('pengaduan/detail/(:num)', 'Pengaduan::detail/$1');
+$routes->get('edit_pengguna', 'AuthController::edit_pengguna', ['as' => 'edit_pengguna']);
 
 
-//ROUTES ADMIN
-$routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);
-$routes->get('/data_pengaduan', 'Home::data_pengaduan', ['filter' => 'role:admin']);
+
+// //ROUTES ADMIN
+// $routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);
+$routes->get('/data_pengaduan', 'Pengaduan::admin_show', ['filter' => 'role:admin']);
+// $routes->get('/data_sekolah', 'Home::data_sekolah', ['filter' => 'role:admin']);
+$routes->get('/sekolah_list', 'Admin::sekolah_show', ['filter' => 'role:admin']);
+$routes->get('/news_list', 'News::news_show', ['filter' => 'role:admin']);
+$routes->get('/guru_list', 'Admin::listGuru', ['filter' => 'role:admin']);
+$routes->get('/siswa_list', 'Admin::listSiswa', ['filter' => 'role:admin']);
+$routes->get('/admin_list', 'Admin::listAdmin', ['filter' => 'role:admin']);
+$routes->post('pengaduan/by-date', 'Admin::getPengaduanByDate');
+$routes->get('/laporan', 'Home::laporan', ['filter' => 'role:admin']);
+
+
+//ROUTES GURU
+$routes->get('/data_aduan', 'Pengaduan::guru_show', ['filter' => 'role:guru']);
+$routes->get('/laporan_guru', 'Home::laporan_guru', ['filter' => 'role:guru']);
 
 
 

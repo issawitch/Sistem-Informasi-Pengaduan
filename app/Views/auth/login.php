@@ -11,8 +11,8 @@
                 <div class="card-body p-0">
                     <!-- Nested Row within Card Body -->
                     <div class="row">
-                        <div class="col-lg-6 d-none d-lg-block">
-                            <img src="/img/Conclusion.svg" style="width: 110%; padding-top: 5%;">
+                        <div class="col-lg-6 d-flex align-items-center">
+                            <img src="/img/mental-health-discussion.png" class="img-fluid rounded-start" style="margin-left: 30px;">
                         </div>
                         <div class="col-lg-6">
                             <div class="p-5">
@@ -26,27 +26,20 @@
                                     <?= csrf_field() ?>
                                     <?php if ($config->validFields === ['email']) : ?>
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" name="login" placeholder="<?= lang('Auth.email') ?>">
+                                            <input type="email" class="form-control form-control-user <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" name="email" placeholder="<?= lang('Auth.email') ?>" required>
                                             <div class="invalid-feedback">
-                                                <?= session('errors.login') ?>
-                                            </div>
-                                        </div>
-                                    <?php else : ?>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control form-control-user <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" name="login" placeholder="<?= lang('Auth.emailOrUsername') ?>">
-                                            <div class="invalid-feedback">
-                                                <?= session('errors.login') ?>
+                                                <?= session('errors.email') ?>
                                             </div>
                                         </div>
                                     <?php endif; ?>
 
                                     <div class="form-group">
-                                        <input type="password" name="password" class="form-control form-control-user  <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" placeholder="<?= lang('Auth.password') ?>">
+                                        <input type="password" name="password" class="form-control form-control-user  <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" placeholder="<?= lang('Auth.password') ?>" required>
                                         <div class="invalid-feedback">
                                             <?= session('errors.password') ?>
                                         </div>
                                     </div>
-                                    
+
 
                                     <?php if ($config->allowRemembering) : ?>
                                         <div class="form-group">

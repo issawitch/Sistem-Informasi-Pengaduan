@@ -18,7 +18,7 @@
                                 <form class="user text-gray-900" enctype="multipart/form-data">
                                     <?= csrf_field() ?>
                                     <label for="pertanyaan1">
-                                        1. Apakah kamu pernah mengalami situasi di mana seseorang dengan sengaja membuat kamu merasa
+                                        Apakah kamu pernah mengalami situasi di mana seseorang dengan sengaja membuat kamu merasa
                                         terancam, takut, atau sedih berulang kali?</label><br>
                                     <div class="form-check form-check-inline">
                                         <input type="radio" name="answer1" id="question1Ya" class="form-check-input" value="1">
@@ -27,7 +27,7 @@
                                     <div class="form-check form-check-inline">
                                         <input type="radio" name="answer1" id="question1Tidak" class="form-check-input" value="0">
                                         <label class="form-check-label" for="question1Tidak">Tidak</label>
-                                    </div><br>
+                                    </div><br><br>
                                     <label for="pertanyaan2">
                                         2. Apakah kamu pernah mendapat pukulan, tendangan, atau kekerasan fisik
                                         lainnya di sekolah?</label><br>
