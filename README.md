@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # CodeIgniter 4 Application Starter
 
 ## What is CodeIgniter?
@@ -65,3 +66,6 @@ Additionally, make sure that the following extensions are enabled in your PHP:
 # ci4-lapor
 Website layanan pengaduan untuk tindak kekerasan, perundungan, maupun intoleransi di sekolah
 >>>>>>> 3c2ebf754575cac4a49f4f6ffc229c2d0ef6fc58
+=======
+# si-lapor
+>>>>>>> origin/main
